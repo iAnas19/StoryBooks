@@ -1,0 +1,35 @@
+.login-container {
+  width: 400px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+p {
+  margin: 10px 0 !important;
+}
+
+.fa-small {
+  font-size: 16px !important;
+}
+
+.btn-float {
+  float: left;
+  margin-right: 10px;
+}
+
+.img-small {
+  width: 180px;
+}
+
+.dark-head {
+  color: black;
+  text-decoration: none;
+}
+
+.icon {
+  color: rgba(21, 101, 192, 1);
+}
+
+.hover:hover {
+  color: rgb(21, 101, 192);
+}
