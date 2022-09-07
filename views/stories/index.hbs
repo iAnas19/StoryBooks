@@ -1,22 +1,22 @@
-<h1>Stories</h1>
+<h1 class="border">Stories</h1>
 <div class="row">
     {{#each stories}}
-    <div class="col s12 m4">
-        <div class="card">
-            <div class="card-image">
+    <div class="col s12">
+        <div class="card exact-width  grey lighten-4 gap">
+            <div class="card-image ">
                 {{{editIcon user ../user _id}}}
             </div>
-            <div class="card-content center-align" >
-                <h5 ><a href="/stories/{{_id}}" class="dark-head">{{title}}</a></h5>
-                <p>{{stripTags (truncate body 30)}}</p>
+            <div class="card-content center-align">
+                <h5 >{{title }}</h5>
+                {{!-- <p>{{stripTags }}</p> --}}
                 <br>
                 <div class="chip">
                     <img src="{{user.image}}" alt="">
-                    <a href="/stories/user/{{user._id}}">{{user.displayName}}</a>
+                    <a href="/stories/user/{{user._id}}" class="black-text">{{user.displayName}}</a>
                 </div>
             </div>
             <div class="card-action center-align">
-                <a href="/stories/{{_id}}" class="btn blue">Read More</a>
+                <a href="/stories/{{_id}}" class="btn btn-block white-text blue-grey darken-4 ">Read Story</a>
             </div>
         </div>
     </div>
@@ -24,3 +24,7 @@
     <p>No stories to display</p>
     {{/each}}
 </div>
+
+
+
+{{> _footer}}

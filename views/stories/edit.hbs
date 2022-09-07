@@ -1,4 +1,4 @@
-<h3>Edit Story</h3>
+<h1 class="border">Edit Story</h1>
 <div class="row">
     <form action="/stories/{{story._id}}" method="POST" class="col s12">
         <input type="hidden" name="_method" value="PUT">
@@ -29,8 +29,12 @@
         </div>
 
         <div class="row">
-            <input type="submit" value="Save" class="btn green">
-            <a href="/dashboard" class="btn red">Cancel</a>
+            <input type="submit" value="Save" class="btn green ">
+            <a href="/dashboard" class="btn orange ">Cancel</a>
         </div>
     </form>
 </div>
+
+
+
+{{> _footer}}

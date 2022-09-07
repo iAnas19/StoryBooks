@@ -1,8 +1,9 @@
-{{!-- <h6>Dashboard</h6> --}}
-<h3>{{name}}'s Dashboard</h3>
-<p>Here are your stories</p>
+<h1 class="border">Dashboard</h1>
+
+<h5>Welcome {{name}}</h5>
+<h6>Here are your stories</h6>
 {{#if stories}}
-<table class="striped">
+<table class="higlight">
     <thead>
         <tr>
             <th>Title</th>
@@ -15,17 +16,21 @@
         {{#each stories}}
         <tr>
             <td><a href="/stories/{{_id}}">{{title}}</a></td>
-            <td>{{formatDate createdAt 'Do MMMM YYYY, h:mm:ss a'}}</td>
-            <td><span class="dash-status">{{status}}</span></td>
+            <td>{{formatDate createdAt 'DD MMM  YYYY, h:mm a'}}</td>
+            <td><span class="dash-status">{{status}}</span> story</td>
             <td>
-                <a href="/stories/edit/{{_id}}" class="btn btn-float orange">
-                <i class="fas fa-edit "></i></a>
-
-                <form action="/stories/{{_id}}" method="POST" id='delete-form'>
-                <input type="hidden" name="_method" value="DELETE">
-                <button type="submit" class="btn red"><i class="fas fa-trash"></i></button></form>
+                <a href="/stories/edit/{{_id}}" class="btn green ">
+                    <i class="fas fa-edit"></i>
+                </a>
             </td>
-            
+            <td>
+                <form action="/stories/{{_id}}" method="POST" id="delete-form">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn red">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </form>
+            </td>
         </tr>
         {{/each}}
     </tbody>
@@ -33,3 +38,5 @@
 {{else}}
 <p>You have not created any stories</p>
 {{/if}}
+
+{{> _footer}}
